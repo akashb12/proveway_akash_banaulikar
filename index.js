@@ -66,7 +66,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     discountDiv.style.display = 'none';
                     selectedCouponBox.style.height = '150px';
                     selectedCouponBox.style.flexDirection = 'column';
-                    selectedCouponBox.style.padding = '5px';
+                    selectedCouponBox.style.paddingTop = '5px';
+                    selectedCouponBox.style.paddingBottom = '5px';
                 }
             }
             const sizeColorHtml = `
