@@ -6,12 +6,13 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    background-color: #f6f6f7;
 }
 
 .parent-box {
     height: 581px;
-    border: 3px solid rgb(83, 81, 81);
     width: 442px;
+    background: #FFFFFF;
 }
 
 .box-title {
@@ -74,6 +75,15 @@ body {
     color: #333;
 }
 
+.discount-on-click{
+    display: flex;
+    padding: 3px;
+    background-color: #FF6B82;
+    font-size: 10px;
+    color: white;
+    margin-left: 5px;
+}
+
 .coupon-discount-percent {
     display: flex;
     justify-content: center;
@@ -114,8 +124,8 @@ body {
     position: absolute;
     top: 3px;
     left: 3px;
-    width: 11px;
-    height: 11px;
+    width: 10px;
+    height: 10px;
     border-radius: 50%;
     background-color: #FF6B82;
 }

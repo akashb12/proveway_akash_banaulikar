@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
             id: 3,
-            discount: '30%',
+            discount: '10%',
             title: 'Buy 3 Get 6',
             price: '36.00'
         },
@@ -58,13 +58,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Show the selected counpon box
             const selectedCouponBox = document.querySelector(`.coupon-box[data-id="${selectedId}"]`);
+            const selectedCoupon = couponData.find(coupon => coupon.id == selectedId);
             // if selected coupon then hide percent and increse height to add size and color
             if (selectedCouponBox) {
                 const discountDiv = selectedCouponBox.querySelector('.coupon-discount-percent');
                 if (discountDiv) {
                     discountDiv.style.display = 'none';
-                    selectedCouponBox.style.height = '150px'
-                    selectedCouponBox.style.flexDirection = 'column'
+                    selectedCouponBox.style.height = '150px';
+                    selectedCouponBox.style.flexDirection = 'column';
+                    selectedCouponBox.style.padding = '10px';
                 }
             }
             const sizeColorHtml = `
@@ -125,6 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
             `;
 
+
             // remove all size-color div
             document.querySelectorAll('.coupon-size-color').forEach(sizeColorDiv => {
                 sizeColorDiv.remove();
@@ -133,6 +136,14 @@ document.addEventListener('DOMContentLoaded', () => {
             const offersDiv = selectedCouponBox.querySelector('.coupon-offers');
             if (offersDiv) {
                 offersDiv.insertAdjacentHTML('afterend', sizeColorHtml);
+            }
+            const discountHtml = `<div style="height:42px;"><span class="discount-on-click">${selectedCoupon.discount} OFF</span></div>`;
+            document.querySelectorAll('.discount-on-click').forEach(discountHtml => {
+                discountHtml.remove();
+            });
+            const couponText = selectedCouponBox.querySelector('.coupon-text')
+            if (couponText) {
+                couponText.insertAdjacentHTML('afterend', discountHtml);
             }
 
         });
