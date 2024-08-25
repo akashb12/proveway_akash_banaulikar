@@ -156,6 +156,7 @@ body {
     background: #FF6B82;
     border: none;
     color: white;
+    cursor: pointer;
 }
 .cart-footer{
     text-align: center;

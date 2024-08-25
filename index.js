@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
             price: '36.00'
         },
     ]
+    // loop to display coupon boxes
     const container = document.getElementById('coupon-box');
     couponData.forEach(coupon => {
         const couponHtml = `
@@ -39,21 +40,25 @@ document.addEventListener('DOMContentLoaded', () => {
         `;
         container.innerHTML += couponHtml;
     });
-    const radioButtons = document.querySelectorAll('.select-box');
 
+    //on radio button click
+    const radioButtons = document.querySelectorAll('.select-box');
     radioButtons.forEach(button => {
         button.addEventListener('change', (event) => {
             const selectedId = event.target.value;
+            // show all coupon discounts
             document.querySelectorAll('.coupon-discount-percent').forEach(discountDiv => {
                 discountDiv.style.display = 'flex';
             });
+            //coupon box when not clicked on radio button
             document.querySelectorAll('.coupon-box').forEach(box => {
                 box.style.height = '74px';
                 box.style.flexDirection = 'row';
             });
 
-            // Show the selected coupon's discount percent div
+            // Show the selected counpon box
             const selectedCouponBox = document.querySelector(`.coupon-box[data-id="${selectedId}"]`);
+            // if selected coupon then hide percent and increse height to add size and color
             if (selectedCouponBox) {
                 const discountDiv = selectedCouponBox.querySelector('.coupon-discount-percent');
                 if (discountDiv) {
@@ -118,10 +123,13 @@ document.addEventListener('DOMContentLoaded', () => {
                         </tr>
                     </table>
                 </div>
-    `;
+            `;
+
+            // remove all size-color div
             document.querySelectorAll('.coupon-size-color').forEach(sizeColorDiv => {
                 sizeColorDiv.remove();
             });
+            //add size color div to selected coupon
             const offersDiv = selectedCouponBox.querySelector('.coupon-offers');
             if (offersDiv) {
                 offersDiv.insertAdjacentHTML('afterend', sizeColorHtml);
