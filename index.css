@@ -10,7 +10,7 @@ body {
 }
 
 .parent-box {
-    height: 581px;
+    height: 620px;
     width: 442px;
     background: #FFFFFF;
 }
@@ -74,7 +74,9 @@ body {
     font-size: 8px;
     color: #333;
 }
-
+.discount-offer-expand{
+    height: 42px;
+}
 .discount-on-click{
     display: flex;
     padding: 3px;
@@ -82,6 +84,11 @@ body {
     font-size: 10px;
     color: white;
     margin-left: 5px;
+}
+.price-cut{
+    margin-left: 5px;
+    font-size: 10px;
+    color: #9F9F9F;
 }
 
 .coupon-discount-percent {

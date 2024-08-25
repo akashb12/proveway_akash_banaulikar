@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     discountDiv.style.display = 'none';
                     selectedCouponBox.style.height = '150px';
                     selectedCouponBox.style.flexDirection = 'column';
-                    selectedCouponBox.style.padding = '10px';
+                    selectedCouponBox.style.padding = '5px';
                 }
             }
             const sizeColorHtml = `
@@ -137,8 +137,12 @@ document.addEventListener('DOMContentLoaded', () => {
             if (offersDiv) {
                 offersDiv.insertAdjacentHTML('afterend', sizeColorHtml);
             }
-            const discountHtml = `<div style="height:42px;"><span class="discount-on-click">${selectedCoupon.discount} OFF</span></div>`;
-            document.querySelectorAll('.discount-on-click').forEach(discountHtml => {
+            const discountHtml = `
+                <div class="discount-offer-expand">
+                    <span class="discount-on-click">${selectedCoupon.discount} OFF</span>
+                    <span class="price-cut"><s>$10.00 USD</s></span>
+                </div>`;
+            document.querySelectorAll('.discount-offer-expand').forEach(discountHtml => {
                 discountHtml.remove();
             });
             const couponText = selectedCouponBox.querySelector('.coupon-text')
