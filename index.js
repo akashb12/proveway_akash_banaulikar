@@ -63,6 +63,8 @@ document.addEventListener('DOMContentLoaded', () => {
             document.querySelectorAll('.coupon-box').forEach(box => {
                 box.style.height = '74px';
                 box.style.flexDirection = 'row';
+                box.style.padding = '0px';
+                box.style.borderColor = '#A7A7A740'
             });
 
             // Show the selected counpon box
@@ -77,6 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     selectedCouponBox.style.flexDirection = 'column';
                     selectedCouponBox.style.paddingTop = '10px';
                     selectedCouponBox.style.paddingBottom = '10px';
+                    selectedCouponBox.style.borderColor = '#FF6B82'
                 }
             }
             const sizeColorHtml = `
