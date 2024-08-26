@@ -143,6 +143,11 @@ body {
     margin-left: 20px;
     line-height: 25px;
 }
+.popular-text{
+    margin-left: 10px;
+    color: #FF6B82;
+    font-weight: 600;
+}
 
 
 /* cart  */

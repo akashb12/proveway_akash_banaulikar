@@ -4,24 +4,32 @@ document.addEventListener('DOMContentLoaded', () => {
             id: 1,
             discount: '30%',
             title: 'Buy 1 Get 2',
-            price: '18.00'
+            price: '18.00',
+            popular:false
         },
         {
             id: 2,
             discount: '30%',
             title: 'Buy 2 Get 4',
-            price: '24.00'
+            price: '24.00',
+            popular:true
         },
         {
             id: 3,
             discount: '10%',
             title: 'Buy 3 Get 6',
-            price: '36.00'
+            price: '36.00',
+            popular:false
         },
     ]
     // loop to display coupon boxes
     const container = document.getElementById('coupon-box');
     couponData.forEach(coupon => {
+        const popularText = coupon.popular ? `
+        <div class="popular-text">
+            <span>Most Popular</span>
+        </div>` : '';
+
         const couponHtml = `
             <div class="coupon-box" data-id="${coupon.id}">
                 <div class="coupon-discount-percent">
@@ -35,6 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         <span>${coupon.title}</span>
                         <span><b>$${coupon.price} USD</b></span>
                     </div>
+                    ${popularText}
                 </div>
             </div>
         `;
@@ -64,10 +73,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 const discountDiv = selectedCouponBox.querySelector('.coupon-discount-percent');
                 if (discountDiv) {
                     discountDiv.style.display = 'none';
-                    selectedCouponBox.style.height = '150px';
+                    selectedCouponBox.style.height = '130px';
                     selectedCouponBox.style.flexDirection = 'column';
-                    selectedCouponBox.style.paddingTop = '5px';
-                    selectedCouponBox.style.paddingBottom = '5px';
+                    selectedCouponBox.style.paddingTop = '10px';
+                    selectedCouponBox.style.paddingBottom = '10px';
                 }
             }
             const sizeColorHtml = `
